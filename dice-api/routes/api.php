@@ -19,9 +19,6 @@ Route::middleware('auth:api')->post('/logout', [AuthenticationController::class,
 
 Route::post('/register', [UserController::class, 'register']);
 Route::put('/users/{id}/role', [UserController::class, 'updateRole'])->middleware(['auth:api']);
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 //--------------------------------------------------------------------------------------------------------------
 
