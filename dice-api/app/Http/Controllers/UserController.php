@@ -50,8 +50,6 @@ class UserController extends Controller
             return response()->json(['message' => 'Not enough permissions.'], 403);
         }
         
-        
-
         return response()->json(['message' => 'Role updated successfully'], 200);
     }
 }
