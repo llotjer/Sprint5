@@ -198,13 +198,16 @@ class PlayerController extends Controller
 
     public function getLoser()
     {
-        $players = Player::all();
-        $player1 = $players->first();
-        $player2 = $players->last();
-
-        if(Player::count() === 2 && $player1->percentage === $player2->percentage)
+        if(Player::count() === 2)
         {
-            return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
+            $players = Player::all();
+            $player1 = $players->first();
+            $player2 = $players->last();
+
+            if($player1->percentage === $player2->percentage)
+            {
+                return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
+            }
 
         } else
         {
@@ -213,7 +216,6 @@ class PlayerController extends Controller
             //dd($loser);
 
             return response()->json($loser, 200);
-
         }
     }
 
@@ -221,13 +223,16 @@ class PlayerController extends Controller
 
     public function getWinner()
     {
-        $players = Player::all();
-        $player1 = $players->first();
-        $player2 = $players->last();
-
-        if(Player::count() === 2 && $player1->percentage === $player2->percentage)
+        if(Player::count() === 2)
         {
-            return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
+            $players = Player::all();
+            $player1 = $players->first();
+            $player2 = $players->last();
+
+            if($player1->percentage === $player2->percentage)
+            {
+                return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
+            }
 
         } else
         {
