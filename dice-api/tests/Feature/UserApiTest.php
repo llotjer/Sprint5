@@ -97,5 +97,46 @@ class UserApiTest extends TestCase
             'email' => 'anonymous2@test.com',
         ]);
     }
+
+    //--------------------------------------------------------------------------------------------------------
+
+    public function test_user_can_be_showed()
+    {
+
+        $userAdmin = User::factory()->create(
+        [
+            'role' => 'admin'
+        ]);
+
+        $userToShow = User::factory()->create();
+
+        Passport::actingAs($userAdmin);
+
+        $response = $this->get("/users/$userToShow->id/user");
+
+        $response->assertOk();
+
+    }
+
+
+    //--------------------------------------------------------------------------------------------------------
+
+    #[Test]
+    public function test_can_be_deleted()
+    {
+        $userAdmin = User::factory()->create(
+        [
+            'role' => 'admin'
+        ]);
+
+        $userToDelete = User::factory()->create();
+
+        Passport::actingAs($userAdmin);
+
+        $response = $this->delete("/users/$userToDelete->id/delete");
+
+        $response->assertOk();
+
+    }
 }
 
