@@ -1,0 +1,651 @@
+{
+	"info": {
+		"_postman_id": "f9bfd883-de83-47e0-abba-850d47a813ae",
+		"name": "api-dice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39815709"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"User\",\r\n    \"email\" : \"foo@user.com\",\r\n    \"password\" : \"12345678\",\r\n    \"role\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"foo@user.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDAwOGIzYWYxMTU4OTMzOWU2YTJlNjYwMWI2Y2YxN2Q4NDRhNGFkY2U1ODJlNGI4M2FiZmJmN2M2ODgyMzY2NjMyOWUxMmYyODRiNDg5YjUiLCJpYXQiOjE3MzI5NTQzMjQuOTM4NjgzLCJuYmYiOjE3MzI5NTQzMjQuOTM4Njg3LCJleHAiOjE3NjQ0OTAzMjQuOTExMDAyLCJzdWIiOiIxMSIsInNjb3BlcyI6W119.tflvsz0-ozr8KDNgqpvDTx-uVFYbrEP8DozMecJRoIzY9-SPLNE26Ozwp5pIPDcJaWQHMd9JRKXgBT8vMKXsaWO15Viytarw0h2G1FecUTwZLvzRFNxlYES43-eaQL5VkOTOgLmaMdoRiTqqUgDu1SXvT-x-irDbXXl1xMDVF_M5dPElzQ-ObutoVp4T439T0L7OIH_cqhAZa8LhHl-fbuxJkb-Y_QjrWOQzPf2oO_GH_dR6EwKnkVd-xpRG_0HWslBVlYAk8nbH7pgv4NEAYsw5jslu_DWzz9WlH1ScJqp9RbmMRTqLBFzz-PS9asKU-RFJRJ_Pqm838jAO71VcgxskN-obJ8oB0GrpJPtyDKAo3DzfKTthWyXuqbBXd0NS1dDyFATMI29wCBPlOSrA474SAIdqp7PylYR3CGiod_NEq71j-2lavv67xjKUU5mMDHIdKjFtvuXSZRIIZDESWpO92llSsG0tQ15505fbVN7DrrjIiJWMB6K4l7P6r7Ovpb1CGLVKddoKh-MZLfYG4ISAHz7F6VvP-lKerHZkhXSEO_c_KGdswP_YhqLTC0UQxS5TFYIEOQwZImAY9GzQVQb378Z2AZbir3RT5TaYGd_uDtOyYtx-ZpANcIHbkdsVGzxIOd_ze6c1p6LJKZdR0s8rPyg7uHvqFwR_9-JgAZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"foo@user.com\",\r\n    \"password\" : 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/{id}/role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGUyM2QyYjNmZjJlNmFkM2Q3NWY3MjQ5MjUzN2FmYzVkZDI0YTZhNjcyOWQwYmQ2NmZjZDUzY2EyMDNhMmM0MTczNjFkZGZlYTU5NjM3NDQiLCJpYXQiOjE3MzI5NTk4NzkuNzc4MjUyLCJuYmYiOjE3MzI5NTk4NzkuNzc4MjU1LCJleHAiOjE3NjQ0OTU4NzkuNzYwNTA5LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.rbzRQSI83incN_FdpwUNtbORz4pGPFBZB_eZc-u0q9SAUojam_gLlIZUpbA8FPnQv1rlFvsjC7PB5jFyaGugLm3ig8b9PZyfkZ5KqqWTI_9TKWHGt-GxMSl6LRiZzw2bN-P3G8t9J_DBXEyNbJVGjU2_L7iloQeEMY7a7e2l3WgGj0xILFu1-MuEkQhOsWl8xik1h8qd3emWIHXWNu76_pCoXT_RoukRMWbp4etiGOhARvUGCB9i3PoO4TnAikVIkVeEyY9aIm3tWcYitSKVCc-Svz1yC_oYn3unpCO9FBAZqgxa3MENvIFZEN5xKOkF9SB2rFmHxW1nFEN_g-ShkUENKCTDXI-VS449sqSQCzAwGbUGmBpMfvVwxHHd85EsEnyrJ8Eo7s9vylsvcpptw2uf_VkFas2FdzOBwyGv4muIP1zqCoQr_Ij--8K2_GYPEfKsff4ySBLvcaIKGpK9Mq4NP5ifOeMqxMKJRpJm3MOp5Zng8PCgJ-3mwEK3RwfoV6acoN2U8SMXrhbctCjP5s90py8cztQlZ5YDql-UufEvT9J3gHsTzMYXkHLM_q6ddhMFPFfwGm1cAyAnsbw1oGswxGOiVWQyflkgmcepY8ebQt8n8GWK1X2oZGgZSnqpYccy6kYGQM453P3iCKQ2AdpDSYerjAl0u8qLmtMLEN4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/11/role",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"11",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players - registrar nou player",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickname\" : \"foo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/{id} - canviar nickname jugador",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickname\" : \"dummy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/11",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/{id}/games - jugador fa partida",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/11/games",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"11",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/{id}/games - eliminar partides jugador",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI"
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/1/games",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players - mostrar jugadors amb percentatge de victòries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/1/games - mostrar partides jugador",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/1/games",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/ranking - ranking percentatges",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/ranking",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"ranking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/ranking/loser -pitjor percentatge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/ranking/loser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"ranking",
+						"loser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/players/ranking/winner - millor percentatge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdiMTc0ZTY2NWMyYjE3OGZkZjNlOWQ0NTZlODQyMTA3NGE0MGVlYWZlZWM2NGFjNWEyY2ViNDcwYmEyOWNiNWJlOGIyNzI0NWYyMjZhNTciLCJpYXQiOjE3MzMwNjM4OTcuMTUyNDYxLCJuYmYiOjE3MzMwNjM4OTcuMTUyNDY3LCJleHAiOjE3NjQ1OTk4OTYuNjY0NzU2LCJzdWIiOiIxMSIsInNjb3BlcyI6W119.ZkvXAa0onKVtnen7kqDa31FcAHuWOS6qGqKiRzXGiuue0ObssRMQMYIBKN7UXWGrA3lN-1gNsBo3p3SyVNTse8F2zUuV3f52d3RP9Pbm4wtNQkejf_-pEjhAU2fzShn0NTZoqqisYJfkdMttShT9H_KjBklk1hzCZ6gfWpwDQqHNJAwjl4VURHzij5UD3Yso_X3f8_boSEJowwDePTwqOD3xXynw37QqmjHZcO3oE7nMQbd0Oy_JGT_JZgHS2-iVuIAVBs0XXXbISpuV0lhKwIQ9Dxm1jkkArsHr1n6GAXn8-zZ9Xl-3w6xrU4iqYDIuJqZyW48zTGbWQOhalgLqSO9bN7w2_tSU2ihSancGynwvewGocQiWge6_qg7wPv_gvup1wwyI9DnxbBtl9AqN9wZOTZVQYtzV32cTYrbYVHZ8J7wcgAjat0VddF9ii7WwMSjgci94uRsyQfWAIzT_WuRTNdAP_7aaM8QGNapnjRRkiMgKr8btT7kyUTA0GR_4Isbh9yxJ8grGegHVrs_e4ue_BsNjShHdrBPBXz0XoI0DnZKicq7WH21CPaMWtFVh1uxsot8OPyRPnujgxC9F2RkBLwaDyr3rQaXp5hk3AO9sOzxrZf9fTl3i4CsFjtuoSEsIPbUU0QyuROYi2A1a6UQvJrNOE2F3RvYDPzuFrKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/players/ranking/winner",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"players",
+						"ranking",
+						"winner"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	]
+}
