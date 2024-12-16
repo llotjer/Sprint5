@@ -71,11 +71,6 @@ class UserController extends Controller
         {
             return response()->json(['message' => 'Not enough permissions.'], 403);
         }
-<<<<<<< Updated upstream
-        
-=======
-
->>>>>>> Stashed changes
         return response()->json(['message' => 'Role updated successfully'], 200);
     }
     
