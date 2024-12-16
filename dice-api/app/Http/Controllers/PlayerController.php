@@ -198,21 +198,44 @@ class PlayerController extends Controller
 
     public function getLoser()
     {
-        $loser = Player::orderBy('victories')->first();
+        $players = Player::all();
+        $player1 = $players->first();
+        $player2 = $players->last();
 
-        //dd($loser);
+        if(Player::count() === 2 && $player1->percentage === $player2->percentage)
+        {
+            return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
 
-        return response()->json($loser, 200);
+        } else
+        {
+            $loser = Player::orderBy('percentage')->first();
+
+            //dd($loser);
+
+            return response()->json($loser, 200);
+
+        }
     }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public function getWinner()
     {
-        $winner = Player::orderByDesc('victories')->first();
+        $players = Player::all();
+        $player1 = $players->first();
+        $player2 = $players->last();
 
-        //dd($winner);
+        if(Player::count() === 2 && $player1->percentage === $player2->percentage)
+        {
+            return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
 
-        return response()->json($winner, 200);
+        } else
+        {
+            $winner = Player::orderByDesc('percentage')->first();
+
+            //dd($winner);
+
+            return response()->json($winner, 200);
+        }
     }
 }
