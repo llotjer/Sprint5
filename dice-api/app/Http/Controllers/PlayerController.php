@@ -28,7 +28,7 @@ class PlayerController extends Controller
 
         return response()->json(
         [
-            'id' => $user->userId, 
+            'id' => $user->id, 
             'message' => 'Player ' . $request->nickname . ' successfully registered!'
         ], 200);
     }
@@ -122,23 +122,46 @@ class PlayerController extends Controller
     {
         $gameController = new GameController();
 
-        if($gameController->store($id))
+        $user = Auth::user();
+
+        $player = Player::findOrFail($user->id);
+
+        if($user && $user->id === $id)
         {
-            return response()->json(
-            [
-                'player_id' => $id, 
-                'message'   => 'Game registered successfully!'
-            ], 200);
+            if($gameController->store($id))
+            {
+                $answer = 'You loose...';
+
+                $playerLastGame = $player->games()->latest('created_at')->first();
+
+                if($playerLastGame->is_victory)
+                {
+                    $answer = 'YOU WIN!';
+                }
+
+                return response()->json(
+                [
+                    'player_id' => $id,
+                    'dice_1'    => $playerLastGame->dice_1,
+                    'dice_2'    => $playerLastGame->dice_2,
+                    'is_victory'=> $answer,
+                    'message'   => 'Game registered successfully!'
+                ], 200);
+
+            } else
+            {
+                return response()->json(
+                [
+                    'player_id' => $id, 
+                    'message'   => 'Some error occurred registering the game'
+                ]);
+            }
 
         } else
         {
-            return response()->json(
-            [
-                'player_id' => $id, 
-                'message'   => 'Some error occurred registering the game'
-            ]);
+            return response()->json(['message' => "You can only play as: $player->nickname."], 403);
         }
-        
+    
     }
     
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
