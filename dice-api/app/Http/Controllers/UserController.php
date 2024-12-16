@@ -35,13 +35,35 @@ class UserController extends Controller
 
     //--------------------------------------------------------------------------------------------------------
 
+    public function show(int $id)
+    {
+        $user = Auth::user();
+
+        if ($user && $user->role === 'admin') 
+        {
+            $userToShow = User::findOrFail($id);
+            return response()->json(
+            [
+                'message' => 'User redeemed successfully',
+                'user' => $userToShow
+            ], 200);
+            
+        }else 
+        {
+            return response()->json(['message' => 'Not enough permissions.'], 403);
+        }
+
+    }
+
+    //--------------------------------------------------------------------------------------------------------
+
     public function updateRole(Request $request, int $id)
     {
         $user = Auth::user();
 
         if ($user && $user->role === 'admin') 
         {
-            $userToUpdate       = User::find($id);
+            $userToUpdate       = User::findOrFail($id);
             $userToUpdate->role = $request->role;
             $userToUpdate->save();
 
@@ -49,9 +71,30 @@ class UserController extends Controller
         {
             return response()->json(['message' => 'Not enough permissions.'], 403);
         }
+<<<<<<< Updated upstream
         
-        
+=======
 
+>>>>>>> Stashed changes
         return response()->json(['message' => 'Role updated successfully'], 200);
+    }
+    
+    //--------------------------------------------------------------------------------------------------------
+
+    public function destroy(int $id)
+    {
+        $user = Auth::user();
+
+        if ($user && $user->role === 'admin') 
+        {
+            $userToDelete = User::findOrFail($id);
+            $userToDelete->delete();
+            return response()->json(['message' => 'User deleted successfully'], 200);
+
+        }else 
+        {
+            return response()->json(['message' => 'Not enough permissions.'], 403);
+        }
+
     }
 }
