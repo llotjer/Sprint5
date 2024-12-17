@@ -81,6 +81,10 @@ class PlayerController extends Controller
             $player = Player::findOrFail($id);
 
             $player->games()->delete();
+            $player->games = 0;
+            $player->victories = 0;
+            $player->percentage = 0;
+            $player->save();
 
             return response()->json(['message' => 'Games successfully deleted.'], 200);
 
@@ -94,26 +98,46 @@ class PlayerController extends Controller
 
     public function getPlayerGames(int $id)
     {
+        $user = Auth::user();
+
+        if(!Player::find($id))
+        {
+            return response()->json(['message' => "Player not found"]);
+        }
+
         $player = Player::findOrFail($id);
 
-        $gameInfo = [];
-
-        foreach(Game::all() as $game)
+        if($user && $user->id === $id)
         {
-            if($game->player_id === $id)
+            $gameInfo = [];
+
+            foreach(Game::all() as $game)
             {
-                $gameInfo[] = 
-                [
-                    'player' => $player->nickname,
-                    'game'   => $game->id,
-                    'dice1'  => $game->dice_1,
-                    'dice2'  => $game->dice_2,
-                ];
+                if($game->player_id === $id)
+                {
+                    $message = 'LOST';
+
+                    if($game->is_victory)
+                    {
+                        $message = 'WIN';
+                    }
+
+                    $gameInfo[] = 
+                    [
+                        'player' => $player->nickname,
+                        'game'   => $game->id,
+                        'dice1'  => $game->dice_1,
+                        'dice2'  => $game->dice_2,
+                        'result' => $message
+                    ];
+                }
             }
-            
+            return $gameInfo;
+
+        } else
+        {
+            return response()->json(['message' => "You can only see your games bro!"], 403);
         }
-        
-        return $gameInfo;
     }
     
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -144,7 +168,7 @@ class PlayerController extends Controller
                     'player_id' => $id,
                     'dice_1'    => $playerLastGame->dice_1,
                     'dice_2'    => $playerLastGame->dice_2,
-                    'is_victory'=> $answer,
+                    'result'    => $answer,
                     'message'   => 'Game registered successfully!'
                 ], 200);
 
@@ -206,7 +230,15 @@ class PlayerController extends Controller
 
             if($player1->percentage === $player2->percentage)
             {
-                return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
+                return response()->json(['message' => "There is a draw between $player1->nickname and $player2->nickname."], 200);
+
+            } else
+            {
+                $winner = Player::orderBy('percentage')->first();
+    
+                //dd($winner);
+    
+                return response()->json($winner, 200);
             }
 
         } else
@@ -231,7 +263,15 @@ class PlayerController extends Controller
 
             if($player1->percentage === $player2->percentage)
             {
-                return response()->json("There is a draw between $player1->nickname and $player2->nickname.", 200);
+                return response()->json(['message' => "There is a draw between $player1->nickname and $player2->nickname."], 200);
+
+            }   else
+            {
+                $winner = Player::orderByDesc('percentage')->first();
+    
+                //dd($winner);
+    
+                return response()->json($winner, 200);
             }
 
         } else
